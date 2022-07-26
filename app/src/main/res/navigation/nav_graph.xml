@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/recyclerViewFragment"
+        android:name="com.appsflyer.af_adrevenue.fragments.RecyclerViewFragment"
+        android:label="fragment_recycler_view"
+        tools:layout="@layout/fragment_recycler_view" >
+        <argument
+            android:name="adNetwork"
+            app:argType="com.appsflyer.af_adrevenue.enums.AdNetwork" />
+        <action
+            android:id="@+id/action_recyclerViewfragment_to_adMobFragment"
+            app:destination="@id/adMobFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.appsflyer.af_adrevenue.fragments.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_recyclerViewFragment"
+            app:destination="@id/recyclerViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/adMobFragment"
+        android:name="com.appsflyer.af_adrevenue.fragments.AdMobFragment"
+        android:label="fragment_ad_mob"
+        tools:layout="@layout/fragment_ad_mob" >
+        <argument
+            android:name="adType"
+            app:argType="com.appsflyer.af_adrevenue.enums.AdType" />
+    </fragment>
+</navigation>

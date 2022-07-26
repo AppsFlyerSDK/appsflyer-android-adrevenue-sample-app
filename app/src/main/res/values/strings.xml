@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AF_AdRevenue</string>
+    <string name="admob">AdMob</string>
+    <string name="other">Other</string>
+    <string name="header">What would you like to integrate?</string>
+    <string name="hello">Hello.</string>
+    <string name="continueBtn">continue</string>
+    <string name="elementText">example</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

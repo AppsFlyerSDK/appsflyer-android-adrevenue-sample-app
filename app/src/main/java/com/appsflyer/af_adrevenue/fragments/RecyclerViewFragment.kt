@@ -7,11 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.appsflyer.af_adrevenue.RecyclerViewAdapter
 import com.appsflyer.af_adrevenue.databinding.FragmentRecyclerViewBinding
+import com.appsflyer.af_adrevenue.enums.AdNetwork
 import com.appsflyer.af_adrevenue.enums.AdType
 import com.appsflyer.af_adrevenue.viewModel.RecyclerViewModel
 
@@ -55,8 +57,14 @@ class RecyclerViewFragment : Fragment() {
     }
 
     private fun onItemClick(position: Int, view: View?) {
+        val adNetwork = binding.toolbar.title
+        var action:NavDirections
         val adType = AdType.parseFromString(adTypes[position].title)
-        val action = RecyclerViewFragmentDirections.actionRecyclerViewfragmentToAdMobFragment(adType)
+        action = if(adNetwork.toString() == AdNetwork.ADMOB.toString()){
+            RecyclerViewFragmentDirections.actionRecyclerViewfragmentToAdMobFragment(adType)
+        } else{
+            RecyclerViewFragmentDirections.actionRecyclerViewFragmentToIronSourceFragment(adType)
+        }
         view?.findNavController()?.navigate(action)
     }
 

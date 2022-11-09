@@ -24,7 +24,7 @@ class StartFragment : Fragment() {
             val adNetwork = if(binding.chipGroup.checkedChipId == binding.chipAdmob.id){
                AdNetwork.ADMOB
             } else{
-                AdNetwork.OTHER
+                AdNetwork.IRONSOURCE
             }
             val action = StartFragmentDirections.actionStartFragmentToRecyclerViewFragment(adNetwork)
             view.findNavController().navigate(action)

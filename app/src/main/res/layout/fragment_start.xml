@@ -43,14 +43,14 @@
                 android:checkable="true"
                 android:text="@string/admob"
                 android:textAlignment="center"
+                android:textAppearance="@style/chipText"
                 android:textSize="20sp"
                 app:chipBackgroundColor="@color/bg_chip_state_list"
                 app:chipIcon="@drawable/admob"
                 app:chipIconSize="30dp"
                 app:chipStrokeColor="@color/md_blue_700"
                 app:chipStrokeWidth="2dp"
-                app:iconStartPadding="5dp"
-                android:textAppearance="@style/chipText"/>
+                app:iconStartPadding="5dp" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_other"
@@ -58,16 +58,16 @@
                 android:layout_height="70dp"
                 android:layout_below="@id/chip_admob"
                 android:checkable="true"
-                android:text="@string/other"
+                android:text="@string/iron_source"
                 android:textAlignment="center"
+                android:textAppearance="@style/chipText"
                 android:textSize="20sp"
                 app:chipBackgroundColor="@color/bg_chip_state_list"
-                app:chipIcon="@drawable/other"
+                app:chipIcon="@drawable/ironsource"
                 app:chipIconSize="30dp"
                 app:chipStrokeColor="@color/md_blue_700"
                 app:chipStrokeWidth="2dp"
-                app:iconStartPadding="5dp"
-                android:textAppearance="@style/chipText"/>
+                app:iconStartPadding="5dp" />
 
         </com.google.android.material.chip.ChipGroup>
 

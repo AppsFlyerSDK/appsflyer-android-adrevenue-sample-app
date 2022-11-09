@@ -20,7 +20,7 @@ class RecyclerViewModel(adNetwork: AdNetwork) :
         }
     }
 
-    val adMobList = listOf(
+    private val adMobList = listOf(
         AdTypeData("Banner", R.drawable.banner),
         AdTypeData("Interstitial", R.drawable.socialadreach),
         AdTypeData("Interstitial video", R.drawable.youtube),
@@ -28,7 +28,7 @@ class RecyclerViewModel(adNetwork: AdNetwork) :
         AdTypeData("Rewarded interstitial", R.drawable.advertising),
         AdTypeData("Native ad", R.drawable.ads),
     )
-    val otherList = listOf(
+    private val ironSourceList = listOf(
         AdTypeData("Banner", R.drawable.banner),
         AdTypeData("Interstitial", R.drawable.socialadreach),
         AdTypeData("Interstitial video", R.drawable.youtube),
@@ -45,7 +45,7 @@ class RecyclerViewModel(adNetwork: AdNetwork) :
             val adTypesAdList = if (adNetwork == AdNetwork.ADMOB) {
                 adMobList
             } else {
-                otherList
+                ironSourceList
             }
             adTypesData.postValue(adTypesAdList)
         }

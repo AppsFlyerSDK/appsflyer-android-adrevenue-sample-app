@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_recyclerViewfragment_to_adMobFragment"
             app:destination="@id/adMobFragment" />
+        <action
+            android:id="@+id/action_recyclerViewFragment_to_ironSourceFragment"
+            app:destination="@id/ironSourceFragment" />
     </fragment>
     <fragment
         android:id="@+id/startFragment"
@@ -31,6 +34,15 @@
         android:name="com.appsflyer.af_adrevenue.fragments.AdMobFragment"
         android:label="fragment_ad_mob"
         tools:layout="@layout/fragment_ad_mob" >
+        <argument
+            android:name="adType"
+            app:argType="com.appsflyer.af_adrevenue.enums.AdType" />
+    </fragment>
+    <fragment
+        android:id="@+id/ironSourceFragment"
+        android:name="com.appsflyer.af_adrevenue.fragments.IronSourceFragment"
+        android:label="fragment_iron_source"
+        tools:layout="@layout/fragment_iron_source" >
         <argument
             android:name="adType"
             app:argType="com.appsflyer.af_adrevenue.enums.AdType" />

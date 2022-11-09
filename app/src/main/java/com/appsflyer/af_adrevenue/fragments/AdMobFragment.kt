@@ -1,15 +1,12 @@
 package com.appsflyer.af_adrevenue.fragments
 
 import android.app.Activity
-import android.content.Context.LAYOUT_INFLATER_SERVICE
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
 import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.appsflyer.adrevenue.AppsFlyerAdRevenue
@@ -22,17 +19,14 @@ import com.google.android.gms.ads.*
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.gms.ads.nativead.MediaView
-import com.google.android.gms.ads.nativead.NativeAdView
 import com.google.android.gms.ads.rewarded.RewardItem
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import com.google.android.gms.ads.rewardedinterstitial.RewardedInterstitialAd
 import com.google.android.gms.ads.rewardedinterstitial.RewardedInterstitialAdLoadCallback
 import java.util.*
-import com.appsflyer.af_adrevenue.R
 
-
-class AdMobFragment : Fragment() {
+class AdMobFragment : androidx.fragment.app.Fragment() {
     private var _binding: FragmentAdMobBinding? = null
     private val binding get() = _binding!!
     private val args: AdMobFragmentArgs by navArgs()
@@ -120,7 +114,7 @@ class AdMobFragment : Fragment() {
                                 }
                             AppsFlyerAdRevenue.logAdRevenue(
                                 "ironsource",
-                                MediationNetwork.googleadmob,
+                                MediationNetwork.customMediation,
                                 Currency.getInstance(Locale.US),
                                 0.99,
                                 params

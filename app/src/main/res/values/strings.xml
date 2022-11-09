@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">AF_AdRevenue</string>
     <string name="admob">AdMob</string>
-    <string name="other">Other</string>
+    <string name="iron_source">IronSource</string>
     <string name="header">What would you like to integrate?</string>
     <string name="hello">Hello.</string>
     <string name="continueBtn">continue</string>

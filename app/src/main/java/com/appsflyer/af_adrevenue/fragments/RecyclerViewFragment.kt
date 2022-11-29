@@ -17,11 +17,12 @@ import com.appsflyer.af_adrevenue.enums.AdNetwork
 import com.appsflyer.af_adrevenue.enums.AdType
 import com.appsflyer.af_adrevenue.viewModel.RecyclerViewModel
 
+
 class RecyclerViewFragment : Fragment() {
     private var _binding: FragmentRecyclerViewBinding? = null
     private val binding get() = _binding!!
     private val args: RecyclerViewFragmentArgs by navArgs()
-    private lateinit var viewModel: RecyclerViewModel
+    lateinit var viewModel: RecyclerViewModel
     lateinit var adTypes: List<com.appsflyer.af_adrevenue.data.AdTypeData>
 
     override fun onCreateView(
@@ -31,7 +32,6 @@ class RecyclerViewFragment : Fragment() {
         _binding = FragmentRecyclerViewBinding.inflate(inflater, container, false)
         val adNetwork = args.adNetwork
         binding.toolbar.title = adNetwork.toString()
-
         val factory = RecyclerViewModel.Factory(adNetwork)
         viewModel = ViewModelProvider(this,factory)[RecyclerViewModel::class.java]
         binding.recyclerView.apply {
@@ -63,8 +63,8 @@ class RecyclerViewFragment : Fragment() {
         action = if(adNetwork.toString() == AdNetwork.ADMOB.toString()){
             RecyclerViewFragmentDirections.actionRecyclerViewfragmentToAdMobFragment(adType)
         } else{
-            RecyclerViewFragmentDirections.actionRecyclerViewFragmentToIronSourceFragment(adType)
-        }
+                RecyclerViewFragmentDirections.actionRecyclerViewFragmentToIronSourceFragment(adType)
+            }
         view?.findNavController()?.navigate(action)
     }
 

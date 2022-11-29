@@ -46,5 +46,9 @@
         <argument
             android:name="adType"
             app:argType="com.appsflyer.af_adrevenue.enums.AdType" />
+        <argument
+            android:name="shouldInitIronSource"
+            app:argType="boolean"
+            android:defaultValue="true" />
     </fragment>
 </navigation>

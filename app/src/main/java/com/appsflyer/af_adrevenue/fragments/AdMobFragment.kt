@@ -47,12 +47,14 @@ class AdMobFragment : androidx.fragment.app.Fragment() {
             AdType.REWARDED -> showRewarded()
             AdType.REWARDED_INTERSTITIAL -> showRewardedInterstitial()
             AdType.NATIVE_AD -> showNativeAd()
+            else->{
+                Log.d("adMobDebug", "not available")
+            }
         }
         binding.toolbar.title = args.adType.toString()
         binding.textView.text = args.adType.toString()
         binding.toolbar.setNavigationOnClickListener { it.findNavController().popBackStack() }
 
-        // Inflate the layout for this fragment
         return binding.root
     }
 
@@ -79,7 +81,7 @@ class AdMobFragment : androidx.fragment.app.Fragment() {
                             }
                         }
                     AppsFlyerAdRevenue.logAdRevenue(
-                        "ironsource",
+                        "admob",
                         MediationNetwork.googleadmob,
                         Currency.getInstance(Locale.US),
                         0.99,
@@ -113,7 +115,7 @@ class AdMobFragment : androidx.fragment.app.Fragment() {
                                     }
                                 }
                             AppsFlyerAdRevenue.logAdRevenue(
-                                "ironsource",
+                                "admob",
                                 MediationNetwork.customMediation,
                                 Currency.getInstance(Locale.US),
                                 0.99,
@@ -148,7 +150,7 @@ class AdMobFragment : androidx.fragment.app.Fragment() {
                                     }
                                 }
                             AppsFlyerAdRevenue.logAdRevenue(
-                                "ironsource",
+                                "admob",
                                 MediationNetwork.googleadmob,
                                 Currency.getInstance(Locale.US),
                                 0.99,
@@ -182,7 +184,7 @@ class AdMobFragment : androidx.fragment.app.Fragment() {
                                     }
                                 }
                             AppsFlyerAdRevenue.logAdRevenue(
-                                "ironsource",
+                                "admob",
                                 MediationNetwork.googleadmob,
                                 Currency.getInstance(Locale.US),
                                 0.99,
@@ -268,7 +270,7 @@ class AdMobFragment : androidx.fragment.app.Fragment() {
                                 }
                             }
                         AppsFlyerAdRevenue.logAdRevenue(
-                            "ironsource",
+                            "admob",
                             MediationNetwork.googleadmob,
                             Currency.getInstance(Locale.US),
                             0.99,

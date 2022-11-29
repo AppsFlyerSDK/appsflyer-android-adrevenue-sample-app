@@ -6,11 +6,12 @@ enum class AdType(val str: String) {
     INTERSTITIAL_VIDEO("Interstitial video"),
     REWARDED("Rewarded"),
     REWARDED_INTERSTITIAL("Rewarded interstitial"),
-    NATIVE_AD("Native ad");
+    NATIVE_AD("Native ad"),
+    OFFER_WALL("OfferWall");
 
     companion object {
        fun parseFromString(str:String): AdType{
-          return AdType.values().first { it.str == str }
+          return values().first { it.str == str }
        }
     }
 }

@@ -9,10 +9,8 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.appsflyer.af_adrevenue.data.AdTypeData
 
-
 class RecyclerViewAdapter(private var dataSet: List<AdTypeData>, private val onItemClick: (position: Int, view: View?) -> Unit) :
     RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
-
     /**
      * Provide a reference to the type of views that you are using
      * (custom ViewHolder).
@@ -48,7 +46,6 @@ class RecyclerViewAdapter(private var dataSet: List<AdTypeData>, private val onI
     }
 
     override fun getItemCount() = dataSet.size
-
 
 }
 

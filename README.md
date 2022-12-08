@@ -38,14 +38,14 @@ Open the App on Android studio, Make sure that the gradle file is synced, Make s
 ## First page of the app
 At the first activity of the app, you will be asked to choose - whice Ad network you would like to integrate with AppsFlyer:
 AdMob or IronSource 
-![ScreenShot of the 1st page](/pics/firstpage.png)
+<img src="/pics/firstpage.png" width="100" height="100">
 
 ## second page of the app
 At the second activity of the app, you will be asked to choose from the list, Which kind of ad would you like to show and test.
-![ScreenShot of the 2nd page](/pics/secondpage.png)
+<img src="/pics/secondpage.png" width="100" height="100">
 
 ## third page of the app
 At the second activity of the app, you will be asked to choose from the list, Which kind of ad would you like to show and test.
-![ScreenShot of the 3rd page](/pics/thirdpage.png)
+<img src="/pics/thirdpage.png" width="100" height="100">
 
 After presenting the ad, you will be able to see in the app logs - that AppsFlyer generated an AdRevenue event when the ad was presented according to the app code.

@@ -51,12 +51,12 @@ At the first activity of the app, you will be asked to choose - whice Ad network
 
 <img src="/pics/firstpage.png" width="400" height="675">
 
-## second page of the app
+## Second page of the app
 At the second activity of the app, you will be asked to choose from the list, Which kind of ad would you like to show and test.
 
 <img src="/pics/secondpage.png" width="400" height="675">
 
-## third page of the app
+## Third page of the app
 At the third activity of the app, the ad you chose will be presented - sometimes it takes a few moments.
 
 <img src="/pics/thirdpage.png" width="400" height="675">

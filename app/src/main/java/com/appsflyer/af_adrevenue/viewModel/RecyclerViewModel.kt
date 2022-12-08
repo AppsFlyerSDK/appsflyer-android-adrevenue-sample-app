@@ -31,7 +31,6 @@ class RecyclerViewModel(adNetwork: AdNetwork) :
     private val ironSourceList = listOf(
         AdTypeData("Banner", R.drawable.banner),
         AdTypeData("Interstitial video", R.drawable.youtube),
-        AdTypeData("Rewarded", R.drawable.socialmedia),
         AdTypeData("OfferWall", R.drawable.advertising),
         )
 

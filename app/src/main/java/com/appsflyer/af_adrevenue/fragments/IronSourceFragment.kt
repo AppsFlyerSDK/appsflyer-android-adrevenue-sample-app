@@ -1,6 +1,5 @@
 package com.appsflyer.af_adrevenue.fragments
 
-import android.content.pm.PackageManager.OnChecksumsReadyListener
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -19,17 +18,14 @@ import com.ironsource.mediationsdk.ISBannerSize
 import com.ironsource.mediationsdk.IronSource
 import com.ironsource.mediationsdk.IronSourceBannerLayout
 import com.ironsource.mediationsdk.logger.IronSourceError
-import com.ironsource.mediationsdk.model.Placement
 import com.ironsource.mediationsdk.sdk.BannerListener
 import com.ironsource.mediationsdk.sdk.InterstitialListener
 import com.ironsource.mediationsdk.sdk.OfferwallListener
-import com.ironsource.mediationsdk.sdk.RewardedVideoListener
 import java.util.*
 
 class IronSourceFragment : androidx.fragment.app.Fragment() {
     private var _binding: FragmentIronSourceBinding? = null
     private val binding get() = _binding!!
-    private var shouldShow = false
     private val args: IronSourceFragmentArgs by navArgs()
     private lateinit var banner: IronSourceBannerLayout
 
@@ -39,7 +35,6 @@ class IronSourceFragment : androidx.fragment.app.Fragment() {
     ): View? {
         _binding = FragmentIronSourceBinding.inflate(inflater, container, false)
 
-//        if (DataProvider.shouldInitIronSource) {
             initializeBannerView()
 
             banner.bannerListener = object : BannerListener {
@@ -120,51 +115,6 @@ class IronSourceFragment : androidx.fragment.app.Fragment() {
                 }
             })
 
-            IronSource.setRewardedVideoListener(object : RewardedVideoListener {
-                override fun onRewardedVideoAdOpened() {
-                    val params: Map<String, String> =
-                        object : HashMap<String, String>() {
-                            init {
-                                put(Scheme.AD_TYPE, AppsFlyerAdNetworkEventType.REWARDED.toString())
-                                put(Scheme.AD_UNIT, IronSource.AD_UNIT.REWARDED_VIDEO.toString())
-                            }
-                        }
-                    generateAdRevenueEvent(params)
-                }
-
-                override fun onRewardedVideoAdClosed() {
-                    Log.d("ironSourceDebug", "Rewarded Video ad closed")
-                }
-
-                override fun onRewardedVideoAvailabilityChanged(p0: Boolean) {
-                    Log.d("ironSourceDebug", "Rewarded Video availablity changed")
-                    if(shouldShow && p0){
-                        val placement = IronSource.getRewardedVideoPlacementInfo("DefaultRewardedVideo")
-                        IronSource.showRewardedVideo(placement.placementName)
-                    }
-                }
-
-                override fun onRewardedVideoAdStarted() {
-                    Log.d("ironSourceDebug", "Rewarded Video ad started")
-                }
-
-                override fun onRewardedVideoAdEnded() {
-                    Log.d("ironSourceDebug", "Rewarded Video ad ended")
-                }
-
-                override fun onRewardedVideoAdRewarded(p0: Placement?) {
-                    Log.d("ironSourceDebug", "Rewarded Video ad rewarded")
-                }
-
-                override fun onRewardedVideoAdShowFailed(p0: IronSourceError?) {
-                    Log.d("ironSourceDebug", p0.toString())
-                }
-
-                override fun onRewardedVideoAdClicked(p0: Placement?) {
-                    Log.d("ironSourceDebug", "Rewarded Video ad clicked")
-                }
-            })
-
             IronSource.setOfferwallListener(object : OfferwallListener {
 
                 override fun onOfferwallAvailable(isAvailable: Boolean) {
@@ -198,12 +148,10 @@ class IronSourceFragment : androidx.fragment.app.Fragment() {
             })
 
             initializeIronSource()
-//        }
 
         when (args.adType) {
             AdType.BANNER -> showBanner()
             AdType.INTERSTITIAL_VIDEO -> showInterstitialVideo()
-            AdType.REWARDED -> showRewarded()
             AdType.OFFER_WALL -> showOfferWall()
             else -> {
                 Log.d("ironSourceDebug", "not available")
@@ -216,8 +164,6 @@ class IronSourceFragment : androidx.fragment.app.Fragment() {
 
         binding.toolbar.setNavigationOnClickListener {
             it.findNavController().popBackStack()
-//            IronSource.destroyBanner(banner)
-//            IronSource.clearRewardedVideoServerParameters()
         }
         return binding.root
     }
@@ -245,10 +191,6 @@ class IronSourceFragment : androidx.fragment.app.Fragment() {
         IronSource.loadInterstitial()
     }
 
-    private fun showRewarded() {
-        shouldShow = true
-    }
-
     private fun showOfferWall() {
         val params: Map<String, String> =
             object : HashMap<String, String>() {
@@ -261,7 +203,6 @@ class IronSourceFragment : androidx.fragment.app.Fragment() {
             IronSource.showOfferwall()
             generateAdRevenueEvent(params)
         }
-
     }
 
     private fun initializeBannerView() {

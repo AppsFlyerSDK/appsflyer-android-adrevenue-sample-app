@@ -40,8 +40,25 @@ class AdMobFragment : androidx.fragment.app.Fragment() {
     ): View {
         _binding = FragmentAdMobBinding.inflate(inflater, container, false)
         mAdView = binding.adView
+        val params: Map<String, String> =
+            object : HashMap<String, String>() {
+                init {
+                    put(
+                        Scheme.AD_TYPE,
+                        AppsFlyerAdNetworkEventType.REWARDED.toString()
+                    )
+                    put(Scheme.AD_UNIT, "ca-app-pub-3940256099942544/5224354917")
+                }
+            }
         when(args.adType){
-            AdType.BANNER -> showBanner()
+//            AdType.BANNER -> showBanner()
+            AdType.BANNER ->                    AppsFlyerAdRevenue.logAdRevenue(
+                "admob",
+                MediationNetwork.googleadmob,
+                Currency.getInstance(Locale.US),
+                0.99,
+                params
+            )
             AdType.INTERSTITIAL -> showInterstitial()
             AdType.INTERSTITIAL_VIDEO -> showInterstitialVideo()
             AdType.REWARDED -> showRewarded()

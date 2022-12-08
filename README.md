@@ -41,7 +41,10 @@ Go to the project directory
   cd my-project
 ```
 
-Open the App on Android studio, Make sure that the gradle file is synced, Make sure that the device/emulator has network, and start your journey with our sample app! 😁
+* Open the App on Android studio
+* Make sure that the gradle file is synced
+* Make sure that the device/emulator has network
+* start your journey with our sample app! 😁
 
 ## First page of the app
 At the first activity of the app, you will be asked to choose - whice Ad network you would like to integrate with AppsFlyer:

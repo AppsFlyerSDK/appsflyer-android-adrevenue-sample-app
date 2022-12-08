@@ -38,7 +38,7 @@ Open the App on Android studio, Make sure that the gradle file is synced, Make s
 ## First page of the app
 At the first activity of the app, you will be asked to choose - whice Ad network you would like to integrate with AppsFlyer:
 AdMob or IronSource 
-<img src="/pics/firstpage.png" width="100" height="100">
+<img src="/pics/firstpage.png" width="400" height="500">
 
 ## second page of the app
 At the second activity of the app, you will be asked to choose from the list, Which kind of ad would you like to show and test.

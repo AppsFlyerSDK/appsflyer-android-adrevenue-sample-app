@@ -48,7 +48,7 @@ Go to the project directory
 
 ## First page of the app
 At the first activity of the app, you will be asked to choose - whice Ad network you would like to integrate with AppsFlyer:
-AdMob or IronSource 
+* AdMob or IronSource 
 
 <img src="/pics/firstpage.png" width="400" height="675">
 

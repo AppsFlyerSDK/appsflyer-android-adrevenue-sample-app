@@ -1,9 +1,9 @@
 
 # AppsFlyer AdRevenue Android Sample App
 
-Android sample app which demonstrate the usage of Appsflyer AdRevenue - SDK connector that 
-enables the ad networks to report ad revenue using impression-level granularity.
-This repository gives you sample app to get you started easily with AdRevenue Generic connector, and how to integrate it with AdMob and IronSource.
+This repository contains an Android sample app which demonstrate the usage of **Appsflyer AdRevenue**: 
+A SDK connector enabling the ad networks to report ad revenue using impression-level granularity.
+The sample app will an easy start with AdRevenue Generic connector, and integration with AdMob and IronSource.
 
 
 ## Acknowledgements
@@ -13,7 +13,7 @@ This repository gives you sample app to get you started easily with AdRevenue Ge
 
 
 ## Documentation
-You can read more in our Developer Hub for Android [here](https://dev.appsflyer.com/hc/docs/ad-revenue-1)
+Learn more in our [Developer Hub for Android](https://dev.appsflyer.com/hc/docs/ad-revenue-1)
 
 
 ## Competability
@@ -23,7 +23,7 @@ AppsFlyer SDK versions >= 5.1.0
 
 AppsFlyer AdRevenue versions >= 6.4.3
 
-* It's more than recommended to use the most updated versions for the SDK and for the AdRevenue connector
+* It's recommended to use the most updated versions for the SDK and AdRevenue connector
 
 
 ## Run Locally
@@ -46,18 +46,18 @@ Go to the project directory
 * Start your new journey with our sample app! 😁
 
 ## First page of the app
-At the first activity of the app, you will be asked to choose - whice Ad network you would like to integrate with AppsFlyer:
+At the first activity of the app choose the Ad network you would like to integrate with AppsFlyer:
 * AdMob or IronSource 
 
 <img src="/pics/firstpage.png" width="400" height="675">
 
 ## Second page of the app
-At the second activity of the app, you will be asked to choose from the list, Which kind of ad would you like to show and test.
+At the second activity of the app choose from the list, the ad type would you like to show and test.
 
 <img src="/pics/secondpage.png" width="400" height="675">
 
 ## Third page of the app
-At the third activity of the app, the ad you chose will be presented - sometimes it takes a few moments.
+At the third activity of the app, the chosen ad will be presented - sometimes it takes a few moments.
 
 <img src="/pics/thirdpage.png" width="400" height="675">
 
